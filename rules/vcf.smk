@@ -88,19 +88,19 @@ rule sort_vcf:
         "bcftools sort {input} > {output} 2> {log}"
 
 
-rule annotate_vcf:
-    input:
-        f"{OUTDIR}/{{aligner}}/{{caller}}_combined/sorted_genotypes.vcf"
-    output:
-        f"{OUTDIR}/{{aligner}}/{{caller}}_combined/annot_genotypes.vcf"
-    log:
-        f"{LOGDIR}/{{aligner}}/annotate_vcf/annotate_{{caller}}.log"
-    params:
-        conf = config["vcfanno_conf"],
-    threads: get_resource("annotate_vcf", "threads")
-    resources:
-        mem=get_resource("annotate_vcf", "mem"),
-        walltime=get_resource("annotate_vcf", "walltime")
-    conda: "../envs/vcfanno.yaml"
-    shell:
-        "vcfanno -ends -p {threads} {params.conf} {input} > {output} 2> {log}"
+#rule annotate_vcf:
+#    input:
+#       f"{OUTDIR}/{{aligner}}/{{caller}}_combined/sorted_genotypes.vcf"
+#    output:
+#       f"{OUTDIR}/{{aligner}}/{{caller}}_combined/annot_genotypes.vcf"
+#    log:
+#        f"{LOGDIR}/{{aligner}}/annotate_vcf/annotate_{{caller}}.log"
+#    params:
+#        conf = config["vcfanno_conf"],
+#    threads: get_resource("annotate_vcf", "threads")
+#    resources:
+#        mem=get_resource("annotate_vcf", "mem"),
+#        walltime=get_resource("annotate_vcf", "walltime")
+#    conda: "../envs/vcfanno.yaml"
+#    shell:
+#        "vcfanno -ends -p {threads} {params.conf} {input} > {output} 2> {log}"
