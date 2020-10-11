@@ -1,4 +1,4 @@
-outdir: out
+outdir: results
 logdir: log
 
 samples:
@@ -9,11 +9,11 @@ samples:
 genome:
     /path/to/database/genome.fa.gz
 
-annotbed:
-    /path/to/database/annotation.bed.gz
+#annotbed:
+#    /path/to/database/annotation.bed.gz
 
-vcfanno_conf:
-    /path/to/configuration/vcfanno_conf.toml
+#vcfanno_conf:
+#    /path/to/configuration/vcfanno_conf.toml
 
 parameters:
     survivor_distance: 500
@@ -24,11 +24,11 @@ last-train:
 last-index:
     pass # created by rule last_prepare
 
-refgene:
-    pass # http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/refGene.txt.gz
+#refgene:
+#    pass # http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/refGene.txt.gz
 
-microsat:
-    pass # http://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/microsat.txt.gz
+#microsat:
+#    pass # http://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/microsat.txt.gz
 
 resources:
     default:
